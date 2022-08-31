@@ -1,7 +1,9 @@
 const prompt = require('prompt-sync')();
 let promptLoop = false;
+var gameLoop = true
 //asks if you want to play
 var blackJackChoice = prompt('Would you like to play Blackjack? y/n? ')
+while (gameLoop = true) {
 //if they select yes or no
 switch (blackJackChoice) {
   case 'y':
@@ -43,7 +45,7 @@ while (promptLoop == true) {
 
   var suits = ["Diamonds", "Clubs", "Hearts", "Spades"];
   var suitIndex = Math.floor(Math.random() * suits.length);
-  
+
 // Checks to see if the Card has a face then prints Face and Suit to console. If it doesn't have a Face it prints Number and Suit instead
   if (card.face == "King" || card.face == "Queen" || card.face == "Jack" || card.face == "Ace") {
     console.log(card.face + " of " + suits[suitIndex])
@@ -94,3 +96,12 @@ dealerNum = Math.floor(Math.random() * 5) + 17
   } else if (cardtotal == dealerNum) {
     console.log(`It's a push! The dealer had ${dealerNum} `);
   };
+
+var gameReplay = prompt('Would you like to play again? y/n? ' )
+if (gameReplay == "y") {
+  gameLoop = true
+} else if (gameReplay == "n") {
+  gameLoop = false
+  break;
+};
+}
