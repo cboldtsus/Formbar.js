@@ -147,8 +147,17 @@ dealerNum = Math.floor(Math.random() * 7) + 17
 var gameReplay = prompt('Would you like to play again? y/n? ' )
 if (gameReplay == "y") {
   gameLoop = true
+  console.clear()
 } else if (gameReplay == "n") {
   gameLoop = false
   break;
-};
+} else if (gameReplay == "sus") {
+  console.log("NONONONNONONONONONONO");
+  gameLoop = false
+  break;
+} else {
+  console.log("Invalid Input");
+  gameLoop = false
+  break;
+}
 }
